@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Common\CommonDAL.cs" />
     <Compile Include="Common\Global.cs" />
-    <Compile Include="Common\HelperExtensions.cs" />
     <Compile Include="Common\SqlHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
