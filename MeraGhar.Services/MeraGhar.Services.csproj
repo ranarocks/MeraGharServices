@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DocumentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -101,8 +102,17 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MeraGhar.BAL\MeraGhar.BAL.csproj">
+      <Project>{d07e88d6-d57f-43b6-b673-cdb4c0b4be31}</Project>
+      <Name>MeraGhar.BAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeraGhar.Models\MeraGhar.Models.csproj">
+      <Project>{1f18be24-e9a6-4773-bb6b-8efa52f81e8a}</Project>
+      <Name>MeraGhar.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

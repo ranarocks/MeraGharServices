@@ -41,7 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DocumentBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MeraGhar.DAL\MeraGhar.DAL.csproj">
+      <Project>{4f98d9cf-56eb-452d-b87c-0817cb8e9008}</Project>
+      <Name>MeraGhar.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeraGhar.Models\MeraGhar.Models.csproj">
+      <Project>{1f18be24-e9a6-4773-bb6b-8efa52f81e8a}</Project>
+      <Name>MeraGhar.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
