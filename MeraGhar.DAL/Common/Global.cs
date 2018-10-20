@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿
 using System.Configuration;
-using SBMS.Utilities;
 
 /// <summary>
 /// Summary description for Global
@@ -20,7 +16,7 @@ public static class Global
         /// </summary>
         public static string ConnectionString
         {
-            get { return ConfigurationManager.ConnectionStrings[SBMSConstants.ConnectionStringName].ToString(); }
+            get { return ConfigurationManager.ConnectionStrings[""].ToString(); }
         }
 
     }
