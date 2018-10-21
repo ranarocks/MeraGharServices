@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using MeraGhar.BAL;
 using MeraGhar.Models;
+using MeraGhar.Utilities;
 
 namespace MeraGhar.Services.Controllers
 {
@@ -20,15 +21,44 @@ namespace MeraGhar.Services.Controllers
        
         [HttpPost]
         [Route("ModifyDocument")]
-        public int ModifyDocument(DocumentModel Documentmdl)
+        public ServiceResponse<string> ModifyDocument(DocumentModel model)
         {
-            return documentBAL.ModifyDocument(Documentmdl);
+            var sRes = new ServiceResponse<string>();
+            try
+            {
+                if (documentBAL.ModifyDocument(model) > 0)
+                    sRes.StatusCode = 200;
+                else
+                {
+                    sRes.StatusCode = (int)HttpStatusCode.InternalServerError; ;
+                }
+            }
+            catch (Exception ex)
+            {
+                sRes.StatusCode = (int)HttpStatusCode.InternalServerError;
+                if (ex.InnerException != null) sRes.Messages.Add(ex.InnerException.ToString());
+            }
+
+            return sRes;
         }
         [HttpPost]
         [Route("GetDocument")]
-        public List<DocumentModel> GetDocument(DocumentModel Documentmdl)
+        public ServiceResponse<DocumentModel> GetDocument(DocumentModel Documentmdl)
         {
-            return documentBAL.GetDocument(Documentmdl);
+            var lstSr = new ServiceResponse<DocumentModel>();
+            try
+            {
+                var result = documentBAL.GetDocument(Documentmdl);
+                lstSr.StatusCode = (int)HttpStatusCode.OK;
+
+            }
+            catch (Exception ex)
+            {
+                lstSr.StatusCode = (int)HttpStatusCode.InternalServerError;
+                if (ex.InnerException != null) lstSr.Messages.Add(ex.InnerException.ToString());
+            }
+            return lstSr;
+           
         }
     }
 }
