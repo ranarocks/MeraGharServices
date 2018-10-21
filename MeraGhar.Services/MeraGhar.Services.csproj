@@ -93,6 +93,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Controllers\FeedBackController.cs" />
     <Compile Include="Controllers\ServiceContactDetailController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -120,6 +121,10 @@
     <ProjectReference Include="..\MeraGhar.Models\MeraGhar.Models.csproj">
       <Project>{1f18be24-e9a6-4773-bb6b-8efa52f81e8a}</Project>
       <Name>MeraGhar.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MeraGhar.Utilities\MeraGhar.Utilities.csproj">
+      <Project>{72e60ab7-44b0-47c0-85d4-f065790d8b58}</Project>
+      <Name>MeraGhar.Utilities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

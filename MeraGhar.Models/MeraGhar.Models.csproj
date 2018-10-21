@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentModel.cs" />
+    <Compile Include="FeedBackModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceContactDetailModel.cs" />
   </ItemGroup>
